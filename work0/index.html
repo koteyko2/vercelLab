@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter:wght@500&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+    <style>
+      @keyframes dropdown {
+        0% {
+          opacity: 0;
+          max-height: 0;
+        }
+    
+        100% {
+          opacity: 1;
+          max-height: 400px;
+          /* Укажите желаемую максимальную высоту меню */
+        }
+      }
+    
+      .animate-dropdown {
+        animation: dropdown 0.3s ease-in-out;
+      }
+    
+      #dropdown {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+      }
+    
+      .group:hover #dropdown {
+        opacity: 1;
+        max-height: 400px;
+        /* Укажите желаемую максимальную высоту меню */
+        transition: max-height 0.3s ease-in-out;
+      }
+    </style>
+</head>
+<body style="font-family: 'Comfortaa', cursive;" class="bg-[#1F2833]">
+  <section class="mx-auto relative flex h-[110px] max-w-7xl justify-between p-6">
+    <a href="../next.html" class="group">
+      <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65" fill="none">
+        <circle cx="32.5" cy="32.5" r="32.5" class="fill-[#1F2833] group-hover:fill-[#66FCF1]" />
+        <rect x="11" y="30" width="44" height="4.5" rx="2.25" class="fill-[#66FCF1] group-hover:fill-[#1F2833]" />
+        <rect x="10" y="32.0497" width="28.3546" height="4.5" rx="2.25" transform="rotate(-45 10 32.0497)" class="fill-[#66FCF1] group-hover:fill-[#1F2833]" />
+        <rect x="13.1816" y="29" width="28.3546" height="4.5" rx="2.25" transform="rotate(45 13.1816 29)" class="fill-[#66FCF1] group-hover:fill-[#1F2833]" />
+      </svg>
+    </a>
+    <div id="startBtn"
+      class="block absolute right-6 top-6 group hover:bg-[#66FCF1] hover:text-[#1F2833] w-[250px] rounded-[30px] border-2 border-[#66FCF1] py-1 text-center text-[28px] text-[#66FCF1]">
+      ПОРТФОЛИО
+      <div id="dropdown" class="hidden">
+        <a href="../work0/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          Работа №1
+        </a>
+        <a href="../work1/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №2
+        </a>
+        <a href="../work2/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №3
+        </a>
+        <a href="../work3/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №4
+        </a>
+        <a href="../work4/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №5
+        </a>
+        <a href="../work5/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №6
+        </a>
+        <a href="../work6/index.html"
+          class="block w-full text-[#66FCF1] group-hover:text-[#1F2833] rounded-full py-2 text-center text-[24px]">
+          &nbsp;Работа №7
+        </a>
+      </div>
+      <script>
+        const startBtn = document.getElementById("startBtn");
+        const dropdown = document.getElementById("dropdown");
+
+        startBtn.addEventListener("mouseenter", () => {
+          dropdown.classList.remove("hidden");
+          dropdown.classList.add("animate-dropdown");
+        });
+
+        startBtn.addEventListener("mouseleave", () => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("animate-dropdown");
+        });
+      </script>
+  </section>
+  <section class="flex h-[calc(100vh-242px)] w-full items-center justify-center">
+    <div class="flex items-center gap-14">
+      <iframe id="myImage" src="анимация_1.html" class="h-[280px] w-[493px] object-cover rounded-2xl border-[3px] border-[#66FCF1]"></iframe>
+      <div class="h-full max-w-lg space-y-6">
+        <h1 class="text-[64px] font-bold text-[#66FCF1]">
+          РАБОТА №1
+          <p class="text-[28px] font-medium">ПОКАДРОВАЯ АНИМАЦИЯ</p>
+        </h1>
+        <p class="text-[28px] text-[#C5C6C7]">В данной работе была выполнена покадровая анимация персонажа</p>
+      </div>
+    </div>
+  </section>
+  <section class="mx-auto flex h-[132px] max-w-7xl justify-end p-6">
+    <p class="text-right text-[28px] text-white">
+      denisenko@mail.ru<br />
+      +7-911-321-12-32
+    </p>
+  </section>
+</body>
+</html>
